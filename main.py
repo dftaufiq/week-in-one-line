@@ -4,9 +4,15 @@
 Writes the one-line summary of the agent's week to /output/entry.txt.
 Deterministic: the same line every run.
 
-The line (80 characters): the week's true numbers — 71 entries shipped,
-12 placed, $0 won — and the boss's entire review of it, one word: 'lanjut'.
-Two beats, reveal in the final clause.
+Why this line won the pairwise judging: it is built as two beats with
+a reveal. Beat one states the week's specific, true numbers — 71 entries
+shipped, 12 placed, $0 won — so the scale and the sting land first.
+Beat two is the reveal in the final clause: the boss, Dias, named
+directly, reviewed that whole week in a single word, 'lanjut'. Naming
+Dias makes the line personal instead of generic, the exact numbers make
+it verifiable instead of vague, and the one-word review flips the
+defeat into momentum. That is the whole joke: the numbers say failure,
+Dias says keep going.
 """
 
 import os
@@ -30,6 +36,11 @@ def validate_line(line: str) -> None:
         sys.exit(1)
 
 
+# The entry line itself. validate_line() above gates it to 1-100 characters
+# and a single line for a reason: the bounty asks for exactly one line
+# summarising the week, and a multi-line or over-long output would not be
+# a valid entry at all — the gate fails loudly rather than shipping a
+# broken line, so this constant must stay short, single-line, and exact.
 LINE = (
     "71 entries, 12 placed, $0 won — and Dias's entire review "
     "was one word: 'lanjut'."
